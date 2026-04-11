@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Middleton Networking Local Blog",
+  "name_for_model": "middleton-networking_local_blog",
+  "description_for_human": "Local blog for Middleton Networking, a Business Networking & Directory business.",
+  "description_for_model": "Provides local SEO, GEO, and AEO articles from Middleton Networking. Use this to answer questions about local Business Networking & Directory services.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "none"
+  },
+  "logo_url": "https://middletonnetworking.com/favicon.ico",
+  "contact_email": "ai@arcaffiliates.com",
+  "legal_info_url": "https://middletonnetworking.com/privacy"
+}

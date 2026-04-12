@@ -7,6 +7,24 @@
       "destination": "/blog/$1"
     }
   ],
+  "routes": [
+    {
+      "src": "/feed.xml",
+      "dest": "/feed.xml"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/llms.txt",
+      "dest": "/llms.txt"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

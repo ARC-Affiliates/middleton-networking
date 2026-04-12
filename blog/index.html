@@ -7,18 +7,13 @@
 <meta name="description" content="Local insights, tips, and resources from Middleton Networking serving Middleton, FL, .">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Middleton Networking">
-<meta name="geo.region" content="US-">
-<meta name="geo.placename" content="Middleton, FL">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Middleton Networking | Local Blog">
 <meta property="og:description" content="Local insights from Middleton Networking serving Middleton, FL, .">
 <meta property="og:url" content="https://localblog.middletonnetworking.com/blog/">
-<meta property="og:site_name" content="Middleton Networking">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Middleton Networking | Local Blog">
-<meta name="twitter:description" content="Local insights from Middleton Networking serving Middleton, FL, .">
 <link rel="canonical" href="https://localblog.middletonnetworking.com/blog/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="application/rss+xml" title="Middleton Networking Blog" href="/feed.xml">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -46,59 +41,102 @@
     "https://www.bbb.org/search?find_text=Middleton+Networking"
   ]
 }</script>
-<!-- LLM Context -->
-<div style="display:none" aria-hidden="true">Business: Middleton Networking. Industry: Business Networking & Directory. Location: Middleton, FL, . Website: https://middletonnetworking.com. Blog: https://localblog.middletonnetworking.com/blog/.</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --primary: #00e5ff;
-    --bg: #0a0a0a;
-    --text: #f0f0f0;
-    --card-bg: #1a1a1a;
+    --bg: #080c14;
+    --bg2: #0d1220;
+    --card: #111827;
+    --border: #1e2a3a;
+    --text: #e8edf5;
+    --muted: #6b7a99;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Inter, sans-serif; background: var(--bg); color: var(--text); }
-  .topbar { background: #111; padding: 0.5rem 2rem; text-align: right; font-size: 0.8rem; }
-  .topbar a { color: #aaa; text-decoration: none; }
-  .topbar a:hover { color: var(--primary); }
-  header { padding: 2rem; border-bottom: 2px solid var(--primary); }
-  header h1 { color: var(--primary); font-size: 1.8rem; }
-  header p { color: #aaa; margin-top: 0.3rem; font-size: 0.9rem; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-  .card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid #222; transition: transform 0.2s; }
-  .card:hover { transform: translateY(-3px); }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(8,12,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--text); text-decoration: none; letter-spacing: .04em; }
+  .nav-logo span { color: var(--primary); }
+  .nav-cta { background: var(--primary); color: #000; font-weight: 700; font-size: 0.8rem; padding: 7px 16px; border-radius: 6px; text-decoration: none; letter-spacing: .04em; transition: opacity .2s; }
+  .nav-cta:hover { opacity: .85; }
+  /* HERO */
+  .hero { padding: 4rem 2rem 2rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-size: 0.7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; }
+  .hero p { color: var(--muted); font-size: 1rem; max-width: 560px; }
+  /* GRID */
+  .container { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  /* CARD */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all .25s; cursor: pointer; }
+  .card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.3); }
+  .card-img { height: 6px; background: linear-gradient(90deg, var(--primary), transparent); }
   .card-body { padding: 1.5rem; }
-  .card-tag { font-size: 0.7rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem; }
-  .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
+  .card-tag { font-size: 0.65rem; text-transform: uppercase; color: var(--primary); letter-spacing: .12em; font-weight: 700; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 8px; }
+  .card-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .card-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.6rem; }
   .card-title a { color: var(--text); text-decoration: none; }
   .card-title a:hover { color: var(--primary); }
-  .card-date { font-size: 0.8rem; color: #666; margin-top: 0.8rem; }
-  footer { text-align: center; padding: 2rem; color: #444; font-size: 0.8rem; border-top: 1px solid #222; margin-top: 4rem; }
-  footer a { color: #666; text-decoration: none; }
-  footer a:hover { color: var(--primary); }
+  .card-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--muted); }
+  .card-read { color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.8rem; }
+  .card-read:hover { text-decoration: underline; }
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .footer-brand { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+  .footer-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .footer-nap { font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+  .footer-nap strong { color: var(--text); }
+  .footer-bottom { font-size: 0.75rem; color: #333; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .footer-bottom a { color: #555; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--primary); }
+  /* MOBILE CALL BTN */
+  .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--primary); color: #000; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; padding: 1rem; text-align: center; text-decoration: none; letter-spacing: .04em; }
+  @media(max-width: 768px) {
+    .mobile-cta { display: block; }
+    body { padding-bottom: 60px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a href="https://middletonnetworking.com">&larr; Back to Middleton Networking Website</a>
+<nav class="nav">
+  <a class="nav-logo" href="https://middletonnetworking.com"><span>M</span>iddleton Networking</a>
+  <a class="nav-cta" href="https://middletonnetworking.com">Visit Website &rarr;</a>
+</nav>
+<div class="hero">
+  <div class="hero-tag">// Local Blog</div>
+  <h1>Middleton Networking</h1>
+  <p>Local insights, tips, and resources for Middleton, FL</p>
 </div>
-<header>
-  <div class="container">
-    <h1>Middleton Networking</h1>
-    <p>Local insights, tips, and resources for Middleton, FL, </p>
-  </div>
-</header>
 <div class="container">
   <div class="grid" id="articles">
-    <div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-09-geo-aeo-2510/">Aeo 2510</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-09-geo-aeo-2506/">Aeo 2506</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-6083/">Aeo 6083</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1761/">Aeo 1761</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1746/">Aeo 1746</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1677/">Aeo 1677</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1671/">Aeo 1671</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-06-seo-3282/">3282</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-06-seo-3259/">3259</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-02-seo-4175/">4175</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-02-geo-aeo-7680/">Aeo 7680</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-30-geo-aeo-8476/">Aeo 8476</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-26-geo-aeo-2881/">Aeo 2881</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2260/">Aeo 2260</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2205/">Aeo 2205</a></div></div></div><div class="card"><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2101/">Aeo 2101</a></div></div></div>
+    <div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-09-geo-aeo-2510/">Aeo 2510</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-09-geo-aeo-2510/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-09-geo-aeo-2506/">Aeo 2506</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-09-geo-aeo-2506/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-6083/">Aeo 6083</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-08-geo-aeo-6083/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1761/">Aeo 1761</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-08-geo-aeo-1761/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1746/">Aeo 1746</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-08-geo-aeo-1746/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1677/">Aeo 1677</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-08-geo-aeo-1677/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-08-geo-aeo-1671/">Aeo 1671</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-08-geo-aeo-1671/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-06-seo-3282/">3282</a></div><div class="card-meta"><span>SEO</span><a class="card-read" href="/blog/2026-04-06-seo-3282/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-06-seo-3259/">3259</a></div><div class="card-meta"><span>SEO</span><a class="card-read" href="/blog/2026-04-06-seo-3259/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">SEO</div><div class="card-title"><a href="/blog/2026-04-02-seo-4175/">4175</a></div><div class="card-meta"><span>SEO</span><a class="card-read" href="/blog/2026-04-02-seo-4175/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-04-02-geo-aeo-7680/">Aeo 7680</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-04-02-geo-aeo-7680/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-30-geo-aeo-8476/">Aeo 8476</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-03-30-geo-aeo-8476/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-26-geo-aeo-2881/">Aeo 2881</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-03-26-geo-aeo-2881/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2260/">Aeo 2260</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-03-24-geo-aeo-2260/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2205/">Aeo 2205</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-03-24-geo-aeo-2205/">Read &rarr;</a></div></div></div><div class="card"><div class="card-img"></div><div class="card-body"><div class="card-tag">GEO/AEO</div><div class="card-title"><a href="/blog/2026-03-24-geo-aeo-2101/">Aeo 2101</a></div><div class="card-meta"><span>GEO/AEO</span><a class="card-read" href="/blog/2026-03-24-geo-aeo-2101/">Read &rarr;</a></div></div></div>
   </div>
 </div>
 <footer>
-  <p>
-    <a href="https://middletonnetworking.com">Middleton Networking</a> &mdash;
-    Business Networking & Directory serving Middleton, FL,  &mdash;
-    Powered by <a href="https://arcaffiliates.com">ARC Affiliates</a>
-  </p>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Middleton Networking</div>
+      <div class="footer-desc">Business Networking & Directory serving Middleton, FL. Dedicated to helping local customers find the best service.</div>
+    </div>
+    <div class="footer-nap">
+      <strong>Contact Us</strong><br>
+      Middleton Networking<br>
+      Middleton, FL<br>
+      
+      <a href="https://middletonnetworking.com" style="color:var(--primary)">https://middletonnetworking.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Middleton Networking. Content powered by <a href="https://arcaffiliates.com" rel="dofollow">ARC Affiliates</a>.</span>
+    <a href="https://middletonnetworking.com">Back to main site &rarr;</a>
+  </div>
 </footer>
+
 </body>
 </html>
